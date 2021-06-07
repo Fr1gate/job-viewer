@@ -1,0 +1,9 @@
+const ActionTypes = {
+    PAGEUP: 'PAGEUP',
+    SEARCH: 'SEARCH',
+    GETLISTSUCCESS: 'GETLISTSUCCESS',
+    GETLISTFAIL: 'GETLISTFAIL',
+    REQUESTLIST: 'REQUESTLIST', 
+}
+
+export default ActionTypes;

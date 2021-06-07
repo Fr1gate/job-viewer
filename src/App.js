@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Filters from './components/Filters/Filters';
+import Results from './components/Results/Results';
+import SearchField from './components/SearchField/SearchField';
+import ResultView from './components/ResultView/ResultView'
+import {useSelector, useDispatch } from 'react-redux';
+
+
 
 function App() {
+  function Body() {
+    if (!useSelector((state => state.searchMode)))
+      return <ResultView />
+    else
+      return (
+        <>
+          <SearchField />
+          <Filters />
+          <Results />
+        </>
+      )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="grid-col-2">
+        <h1 className="logo"><b>Github </b>Jobs</h1>
       </header>
-    </div>
+      {Body()}
+      <footer className="footer grid-col-2">
+        <div className="footer__signature">
+          <p>created by <a href="#">Dmitry Pershikov</a> - <a href="https://devChallenges.io">devChallenges.io</a></p>
+        </div>
+      </footer>
+    </>
   );
 }
 

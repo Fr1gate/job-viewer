@@ -3,10 +3,10 @@ import ActionTypes from './ActionTypes'
 
 export default function Reducer (state, action) {
     switch (action.type) {
-        case ActionTypes.PAGEUP:
+        case ActionTypes.SETCURRENTPAGE:
             return {
                 ...state,
-                currentPage: state.currentPage + 1
+                currentPage: action.payload
             }
         
         case ActionTypes.GETLISTSUCCESS: {

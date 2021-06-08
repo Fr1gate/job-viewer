@@ -1,17 +1,14 @@
-import {useSelector, useDispatch } from 'react-redux'
+import {useDispatch } from 'react-redux'
 import React from 'react'
 import Actions from '../../Redux/Actions'
 
 const SearchField = (props) => {
     const dispatch = useDispatch();
-    
-    const page = useSelector(state => state.currentPage)
 
     function changeHandler(e) {
         dispatch(Actions.requestList(e.target.value))
     }
 
-    
     return(
         <div className="search grid-col-2">
         <form className="search__form">

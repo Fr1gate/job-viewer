@@ -2,7 +2,7 @@ import Filters from './components/Filters/Filters';
 import Results from './components/Results/Results';
 import SearchField from './components/SearchField/SearchField';
 import ResultView from './components/ResultView/ResultView'
-import {useSelector, useDispatch } from 'react-redux';
+import {useSelector} from 'react-redux';
 
 
 
@@ -28,7 +28,7 @@ function App() {
       {Body()}
       <footer className="footer grid-col-2">
         <div className="footer__signature">
-          <p>created by <a href="#">Dmitry Pershikov</a> - <a href="https://devChallenges.io">devChallenges.io</a></p>
+          <p>created by <a href="https://github.com/Fr1gate">Dmitry Pershikov</a> - <a href="https://devChallenges.io">devChallenges.io</a></p>
         </div>
       </footer>
     </>

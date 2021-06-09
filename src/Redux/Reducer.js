@@ -15,8 +15,22 @@ export default function Reducer (state, action) {
                 results: action.payload
             }
         }
-            
-    
+        case ActionTypes.SETFILTER: {
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    [action.payload[0]]: action.payload[1]
+                }
+            }
+        }
+        case ActionTypes.SETSEARCHSTRING: {
+            return {
+                ...state,
+                searchString: action.payload
+            }
+        }
+        
         default:
             return {
                 ...state

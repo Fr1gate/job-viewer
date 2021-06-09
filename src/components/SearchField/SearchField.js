@@ -1,12 +1,13 @@
-import {useDispatch } from 'react-redux'
 import React from 'react'
 import Actions from '../../Redux/Actions'
+import {useDispatch} from 'react-redux'
 
 const SearchField = (props) => {
     const dispatch = useDispatch();
 
     function changeHandler(e) {
-        dispatch(Actions.requestList(e.target.value))
+        dispatch(Actions.setSearchString(e.target.value))
+        dispatch(Actions.requestList())
     }
 
     return(

@@ -54,8 +54,7 @@ const Results = (props) => {
             if (i < totalPages && i > currentPage + 1 && !rightDots) {
                 addEl(dots);
                 rightDots = true;
-            }
-                
+            }      
         }
 
         return result;
@@ -80,7 +79,6 @@ const Results = (props) => {
     }
 
     if (results.length > 0) {
-        console.log(results);
         for (let i = firstElement; i <= totalElements && i < firstElement + ElementsPerPage; i++) {
             let element = results[i];
             if (element)
@@ -96,7 +94,11 @@ const Results = (props) => {
     
     return(
         <div className="results">
-            {cards}
+            {cards.map(item => (
+                <React.Fragment key={item.id}>
+                    {item}
+                </React.Fragment>
+            ))}
             <nav className="results__pagination">
                 <button className="results__page results__page_left" onClick={leftArrowClickHandler}>
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">

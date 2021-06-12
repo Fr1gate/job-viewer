@@ -12,7 +12,8 @@ export default function Reducer (state, action) {
         case ActionTypes.GETLISTSUCCESS: {
             return {
                 ...state,
-                results: action.payload
+                results: action.payload,
+                currentPage: 1
             }
         }
         case ActionTypes.SETFILTER: {
@@ -28,6 +29,26 @@ export default function Reducer (state, action) {
             return {
                 ...state,
                 searchString: action.payload
+            }
+        }
+        case ActionTypes.SWITCHSEARCHMODE: {
+            let newSearchMode = !(state.searchMode)
+            return {
+                ...state,
+                searchMode: newSearchMode
+            }
+        }
+        case ActionTypes.GETJOBSUCCESS: {
+            return {
+                ...state,
+                vacancy: action.payload
+            }
+        }
+        case ActionTypes.SWITCHWAIT: {
+            let newAwaitingResponse = !(state.awaitingResponse)
+            return {
+                ...state,
+                awaitingResponse: newAwaitingResponse
             }
         }
         

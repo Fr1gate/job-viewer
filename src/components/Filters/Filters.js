@@ -1,4 +1,4 @@
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import React from 'react'
 import Actions from '../../Redux/Actions'
 
@@ -45,9 +45,3 @@ const Filters = (props) => {
 }
 
 export default Filters
-
-
-
-
-
-

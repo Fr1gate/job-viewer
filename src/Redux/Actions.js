@@ -42,7 +42,8 @@ const Actions = {
                 }
             });
 
-
+        
+        dispatch(Actions.switchAwaitingStatus);
         fetch(`https://api.hh.ru/vacancies?text=${searchString}&per_page=100`)
             .then(res => {
                 if (res.ok)
@@ -50,10 +51,32 @@ const Actions = {
             })
             .then(json => {
                 dispatch(Actions.getListSuccess(json.items))
+                dispatch(Actions.switchAwaitingStatus);
             })
             .catch(err => {
                 console.error(err.message)
             })
+    },
+    requestJob: (vacancy_id) => dispatch => {
+        dispatch(Actions.switchAwaitingStatus);
+        fetch(`https://api.hh.ru/vacancies/${vacancy_id}`)
+            .then(res => {
+                if (res.ok)
+                    return res.json()
+            })
+            .then(json => {
+                dispatch(Actions.getJobSuccess(json))
+                dispatch(Actions.switchAwaitingStatus);
+            })
+            .catch(err => {
+                console.error(err.message)
+            })
+    },
+    getJobSuccess: (payload) => {
+        return {
+            type: ActionTypes.GETJOBSUCCESS,
+            payload: payload
+        }
     },
     getListSuccess: (payload) => {
         return {
@@ -77,6 +100,16 @@ const Actions = {
         return {
             type: ActionTypes.SETSEARCHSTRING,
             payload: payload
+        }
+    },
+    switchSearchMode: () => {
+        return {
+            type: ActionTypes.SWITCHSEARCHMODE
+        }
+    },
+    switchAwaitingStatus: () => {
+        return {
+            type: ActionTypes.SWITCHWAIT
         }
     }
 

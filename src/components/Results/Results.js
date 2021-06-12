@@ -78,6 +78,8 @@ const Results = (props) => {
         changePage(currentPage + 1);
     }
 
+    
+
     if (results.length > 0) {
         for (let i = firstElement; i <= totalElements && i < firstElement + ElementsPerPage; i++) {
             let element = results[i];
@@ -88,7 +90,8 @@ const Results = (props) => {
                     empName={element.employer.name} 
                     date={element.published_at}
                     schedule={element.schedule.id} 
-                    area={element.area.name} />);
+                    area={element.area.name}
+                    id={element.id} />);
         }
     }
     

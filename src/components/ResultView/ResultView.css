@@ -1,0 +1,8 @@
+.info__link {
+    border: none;
+    font-family: inherit;
+    font-weight: inherit;
+    background: transparent;
+    width: 100%;
+    padding: 0;
+}

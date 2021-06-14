@@ -2,6 +2,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import React from 'react'
 import Actions from '../../Redux/Actions'
 import Card from '../Card/Card'
+import './Results.css'
 
 const Results = (props) => {
     const dispatch = useDispatch();

@@ -47,9 +47,9 @@ const ResultView = (props) => {
                                     job.employer.logo_urls[240]:
                                     './static/img/no-image_90.png':
                                 './static/img/no-image_90.png'} 
-                            height="42" 
-                            width="42" 
-                            alt={job.name + " logo"}/>
+                        height="42" 
+                        width="42" 
+                        alt={job.name + " logo"}/>
                     <div className="job__company-info">
                         <h3 className="job__company-name">{job.employer?job.employer.name:''}</h3>
                         <span className="job__location location">{job.area?job.area.name:''}</span>

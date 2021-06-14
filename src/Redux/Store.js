@@ -7,7 +7,8 @@ const preloadedState = {
   results: [],
   currentPage: 1,
   filters: {
-
+    schedule: "anySchedule",
+    city: "anyCity"
   },
   searchString: '',
   searchMode: true,

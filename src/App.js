@@ -7,8 +7,9 @@ import {useSelector} from 'react-redux';
 
 
 function App() {
+  const isInSearch = useSelector((state => state.searchMode));
   function Body() {
-    if (!useSelector((state => state.searchMode)))
+    if (!isInSearch)
       return <ResultView />
     else
       return (
@@ -23,12 +24,12 @@ function App() {
   return (
     <>
       <header className="grid-col-2">
-        <h1 className="logo"><b>Github </b>Jobs</h1>
+        <h1 className="logo"><b>Jobs </b>viewer</h1>
       </header>
       {Body()}
       <footer className="footer grid-col-2">
         <div className="footer__signature">
-          <p>created by <a href="https://github.com/Fr1gate">Dmitry Pershikov</a> - <a href="https://devChallenges.io">devChallenges.io</a></p>
+          <p>Сделано <a href="https://github.com/Fr1gate" target="_blank" rel="noreferrer">Дмитрием Першиковым</a> - Дизайн взят с <a href="https://devChallenges.io" target="_blank" rel="noreferrer">devChallenges.io</a> - Вакансии запрашиваются с API <a href="https://dev.hh.ru" target="_blank" rel="noreferrer">dev.hh.ru</a></p>
         </div>
       </footer>
     </>

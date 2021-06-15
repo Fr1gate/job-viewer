@@ -4,6 +4,7 @@
         src: 	url('../../fonts/#{$file-name}.woff2') format("woff2");
         font-weight: $font-weight;
         font-style: $font-style;
+        font-display: swap;
     }
 }
 

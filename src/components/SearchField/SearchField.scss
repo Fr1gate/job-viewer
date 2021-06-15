@@ -59,3 +59,35 @@
         font-weight: 500;
     }
 }
+
+@media (min-width: 1920px) {
+    .search {
+        border-radius: vw(8);
+        
+        &__form {
+            height: vh(55);
+            border-radius: vw(4);
+    
+            padding: vw(4);
+            padding-left: vw(17);
+        }
+    
+        &__icon {
+            height: vw(15);
+            width: vw(15);
+            margin-right: vw(10);
+        }
+    
+        &__field {
+            font-size: vw(12);
+            padding-right: vw(5);
+        }
+    
+        &__submit {
+            background: var(--accent);
+            width: vw(146);
+            border-radius: vw(4);
+            font-size: vw(16);
+        }
+    }
+}

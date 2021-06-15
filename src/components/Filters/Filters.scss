@@ -99,3 +99,35 @@
         }
     }
 }
+
+@media (min-width: 1920px) {
+    .filters {
+        font-size: vw(14);
+        line-height: vw(21);
+        &__checkbox {
+            width: vw(18);
+            height: vw(18);
+            border: #B9BDCF, vw(1), solid;
+            margin: 0 vw(12);
+        }
+    
+        &__header {
+            font-size: vw(14);
+            line-height: vw(21);
+            margin-top: vh(30);
+            margin-bottom: vh(14);
+        }
+    
+    
+        &__label_radio{
+            padding-bottom: vw(18);
+        }
+    
+        &__radio {
+            height: vw(18);
+            width: vw(18);
+            //background-size: vw(18) vw(18);
+            margin-right: vw(12);  
+        }
+    }
+}

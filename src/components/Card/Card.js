@@ -15,7 +15,7 @@ const Card = (props) => {
 
     return(
         <div className="card">
-            <div className="card__img-wrapper" style={{width: '90px', height: '90px'}}>
+            <div className="card__img-wrapper">
                 <img className="card__img" src={props.logo? props.logo[240]: noImg} alt={`${props.empName} logo`} />
             </div>
             <div className="card__info">

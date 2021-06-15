@@ -126,7 +126,7 @@
     &__text {
         margin-top: vh(30);
         line-height: 150%;
-        padding-left: 15px;
+        padding-left: vw(15);
 
         & p {
             margin-bottom: vh(30);
@@ -161,4 +161,79 @@
     .job__label:first-child {
         margin-left: 0;
     }
+}
+
+@media (min-width: 1920px) {
+    .info {
+        font-size: vw(14);
+        line-height: vw(21);
+    
+        &__link {
+            & svg {
+                margin-right: vw(15);
+            }
+        }
+    
+        &__header {
+            margin-top: vw(35);
+            margin-bottom: vw(15);
+        }
+    
+        &__text {
+            margin-bottom: vw(35);
+        }
+    }
+
+    .job {
+        font-size: vw(16);
+        line-height: vw(24);
+    
+        &__header {
+            font-size: vw(24);
+        }
+    
+        &__label {
+            margin-left: vw(4);
+
+            &:first-child {
+                margin-left: vw(15);
+            }
+        }
+
+        &__company-logo {
+            border-radius: vw(4);
+            margin-right: vw(12);
+        }
+    
+        &__company-name {
+            font-size: vw(18);
+            line-height: vw(21);
+        }
+    
+        &__text {
+            margin-top: vh(30);
+            line-height: 150%;
+            padding-left: vw(15);
+    
+            & p {
+                margin-bottom: vh(30);
+            }
+    
+            & strong {
+                font-weight: bold;
+            }
+    
+            & ul {
+                list-style: circle;
+                margin-bottom: vw(10);
+            }
+        }
+    }
+    
+    
+    .job__text ul {
+        list-style:circle;
+        margin-bottom: vw(10);
+    }
+    
 }

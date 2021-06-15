@@ -10,12 +10,20 @@
     padding: 12px;
 
     display: flex;
+    align-items: center;
 
     font-family: "Roboto", sans-serif;
 
-    &__img {
+    &__img-wrapper {
         height: 90px;
         width: 90px;
+    }
+
+    &__img {
+        height: inherit;
+        width: inherit;
+
+        
     }
 
     &__info {
@@ -69,5 +77,49 @@
 @media (max-width: 499px) {
     .card__bottom-wrap {
         flex-direction: column;
+    }
+}
+
+@media (min-width: 1920px) {
+    .card {
+        
+        border-radius: vw(4);
+        padding: vw(12);
+
+        &__img-wrapper {
+            height: vw(90);
+            width: vw(90);
+        }
+    
+        &__img {
+            height: inherit;
+            width: inherit;
+            object-fit: contain;
+        }
+    
+        &__info {
+            padding-left: vw(16);
+        }
+    
+        &__company {
+            font-size: vw(12);
+            line-height: vw(14);
+            margin-bottom: vw(8);
+        }
+    
+        &__job-name {
+            font-size: vw(18);
+            line-height: vw(21);
+            margin-bottom: vw(12);
+        }
+    
+        &__location {
+            margin-right: vw(10);
+        }
+    
+        &__bottom-right {
+            height: vw(28);
+        }
+        
     }
 }

@@ -3,6 +3,7 @@ import Results from './components/Results/Results';
 import SearchField from './components/SearchField/SearchField';
 import ResultView from './components/ResultView/ResultView'
 import {useSelector} from 'react-redux';
+import './scss/style.scss'
 
 
 
@@ -29,7 +30,7 @@ function App() {
       {Body()}
       <footer className="footer grid-col-2">
         <div className="footer__signature">
-          <p>Сделано <a href="https://github.com/Fr1gate" target="_blank" rel="noreferrer">Дмитрием Першиковым</a> - Дизайн взят с <a href="https://devChallenges.io" target="_blank" rel="noreferrer">devChallenges.io</a> - Вакансии запрашиваются с API <a href="https://dev.hh.ru" target="_blank" rel="noreferrer">dev.hh.ru</a></p>
+          <p>Сделано <a href="https://github.com/Fr1gate" target="_blank" rel="noreferrer">Дмитрием Першиковым</a> | Дизайн взят с <a href="https://devChallenges.io" target="_blank" rel="noreferrer">devChallenges.io</a> | Вакансии запрашиваются с API <a href="https://dev.hh.ru" target="_blank" rel="noreferrer">dev.hh.ru</a></p>
         </div>
       </footer>
     </>

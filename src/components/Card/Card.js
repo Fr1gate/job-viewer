@@ -1,8 +1,9 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import Actions from '../../Redux/Actions';
-import './Card.css'
+import Actions from '../../Redux/Actions'
+import './Card.scss'
 import calcDate from '../../features/calcDate'
+import noImg from '../../img/no-image_90.png'
 
 const Card = (props) => {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Card = (props) => {
     return(
         <div className="card">
             <div className="card__img-wrapper" style={{width: '90px', height: '90px'}}>
-                <img className="card__img" src={props.logo? props.logo[240]: './static/img/no-image_90.png'} alt={`${props.empName} logo`} />
+                <img className="card__img" src={props.logo? props.logo[240]: noImg} alt={`${props.empName} logo`} />
             </div>
             <div className="card__info">
                 <h2 className="card__company">{props.empName}</h2>

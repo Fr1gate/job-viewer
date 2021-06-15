@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux'
 import React from 'react'
 import Actions from '../../Redux/Actions'
+import './Filters.scss'
 
 
 

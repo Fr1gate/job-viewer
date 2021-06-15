@@ -1,0 +1,164 @@
+@import "../../scss/includes.scss";
+
+.info {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+
+    padding-right: vw(120);
+
+    &__link {        
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        border: none;
+        font-family: inherit;
+        font-weight: inherit;
+        background: transparent;
+        width: 100%;
+        padding: 0;
+        
+        & svg {
+            fill: var(--accent);
+            transform: rotate(180deg);
+            margin-right: 15px;
+        }
+
+        &:hover {
+            background: var(--accent-bg);
+        }
+    }
+
+    &__header {
+        margin-top: 35px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: var(--gray);
+    }
+
+    &__text {
+        color: var(--text);
+        margin-bottom: 35px;
+
+        & a {
+            color: var(--accent);
+            cursor: pointer;
+
+
+            &:hover {
+                background: var(--accent-bg);
+            }
+            &:focus {
+                background: var(--accent-bg);
+            }
+        }
+    }
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--text);
+
+    &__title {
+        display: flex;
+        
+    }
+
+    &__header {
+        display: inline;
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &__labels {
+        display: flex;
+    }
+
+    &__label {
+        
+        margin-left: 4px;
+        &:first-child {
+            margin-left: 15px;
+        }
+    }
+
+    &__date {   
+        margin-bottom: vh(35);
+    }
+
+    &__company-wrapper {
+        display: flex;
+    }
+
+    &__company-logo {
+        object-fit: contain;
+        border-radius: 4px;
+        margin-right: 12px;
+    }
+
+    &__company-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__company-name {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        letter-spacing: 0em;
+    }
+
+    &__text {
+        margin-top: vh(30);
+        line-height: 150%;
+        padding-left: 15px;
+
+        & p {
+            margin-bottom: vh(30);
+        }
+
+        & strong {
+            font-weight: bold;
+        }
+
+        & ul {
+            list-style: circle;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+.job__text ul {
+    list-style:circle;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 499px) {
+    .job__title {
+        flex-direction: column;
+    }
+
+    .job__label {
+        margin-top: 10px;
+    }
+
+    .job__label:first-child {
+        margin-left: 0;
+    }
+}

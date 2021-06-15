@@ -2,7 +2,8 @@ import {useSelector, useDispatch } from 'react-redux'
 import React from 'react'
 import Actions from '../../Redux/Actions'
 import calcDate from '../../features/calcDate'
-import './ResultView.css'
+import './ResultView.scss'
+import noImg from '../../img/no-image_90.png'
 
 const ResultView = (props) => {
     const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const ResultView = (props) => {
                     <a rel="noreferrer"
                         target="_blank"
                         href={job.response_url?job.response_url:`https://hh.ru/vacancy/${job.id}`}>
-                        связаться с работодателем</a>
+                        открыть оригинал</a>
                 </p>
             </aside>
             <div className="job">
@@ -45,8 +46,8 @@ const ResultView = (props) => {
                         src={job.employer?
                                 job.employer.logo_urls?
                                     job.employer.logo_urls[240]:
-                                    './static/img/no-image_90.png':
-                                './static/img/no-image_90.png'} 
+                                    noImg:
+                                noImg}  
                         height="42" 
                         width="42" 
                         alt={job.name + " logo"}/>
@@ -58,7 +59,11 @@ const ResultView = (props) => {
                 <div 
                     className="job__text" 
                     dangerouslySetInnerHTML={
-                        {__html: job.branded_description?job.branded_description:job.description?job.description:'NO DESCRIPTION'}}>
+                        {__html: job.branded_description?
+                            job.branded_description:
+                            job.description?
+                                    job.description:
+                                    'NO DESCRIPTION'}}>
                 </div>
             </div>
         </>        

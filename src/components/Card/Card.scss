@@ -1,0 +1,73 @@
+@import "../../scss/includes.scss";
+
+.card {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    background: #fff;
+
+    margin-bottom: vh(32);
+    padding: 12px;
+
+    display: flex;
+
+    font-family: "Roboto", sans-serif;
+
+    &__img {
+        height: 90px;
+        width: 90px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-left: 16px;
+        width: 100%;
+    }
+
+    &__company {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 14px;
+        letter-spacing: 0em;
+        color: var(--text);
+
+        margin-bottom: 8px;
+
+    }
+
+    &__job-name {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        color: var(--text);
+        cursor: pointer;
+
+        margin-bottom: 12px;
+    }
+
+    &__bottom-wrap{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__location {
+        margin-right: 10px;
+    }
+
+    &__bottom-right {
+        height: 28px;
+    }
+    
+}
+
+@media (max-width: 499px) {
+    .card__bottom-wrap {
+        flex-direction: column;
+    }
+}

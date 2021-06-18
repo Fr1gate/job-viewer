@@ -44,13 +44,6 @@ export default function Reducer (state, action) {
                 vacancy: action.payload
             }
         }
-        case ActionTypes.SWITCHWAIT: {
-            let newAwaitingResponse = !(state.awaitingResponse)
-            return {
-                ...state,
-                awaitingResponse: newAwaitingResponse
-            }
-        }
         
         default:
             return {

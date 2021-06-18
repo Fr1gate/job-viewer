@@ -1,10 +1,13 @@
 import ActionTypes from './ActionTypes';
 import Store from '../Redux/Store'
+import SearchQueue from '../features/queryQueue';
 
 const Actions = {
     requestList: () => dispatch => {
         let searchString = Store.getState().searchString;
         let filters = Store.getState().filters;
+        let id = Date.now();
+        SearchQueue.pushToQueue(id);
 
         if (Object.keys(filters).length > 0)
             Object.keys(filters).forEach(element => {
@@ -35,42 +38,43 @@ const Actions = {
                             default:
                                 break;
                         }
-                    break;
-                
-                    default:
                         break;
-                }
+                        
+                        default:
+                            break;
+                    }
             });
-
-        
-        dispatch(Actions.switchAwaitingStatus);
-        fetch(`https://api.hh.ru/vacancies?text=${searchString}&per_page=100`)
+            
+        fetch(`https://api.hh.ru/vacancies?text=${searchString}&per_page=50`)
             .then(res => {
-                if (res.ok)
-                    return res.json()
+                if (res.ok) {
+                    if (SearchQueue.queryReady(id))
+                        return res.json();
+                    else
+                        throw new Error('Query is outdated')
+                }
             })
             .then(json => {
                 dispatch(Actions.getListSuccess(json.items))
-                dispatch(Actions.switchAwaitingStatus);
+
             })
             .catch(err => {
-                console.error(err.message)
+                console.log(err)
             })
     },
+        
     requestJob: (vacancy_id) => dispatch => {
-        dispatch(Actions.switchAwaitingStatus);
         fetch(`https://api.hh.ru/vacancies/${vacancy_id}`)
-            .then(res => {
-                if (res.ok)
-                    return res.json()
-            })
-            .then(json => {
-                dispatch(Actions.getJobSuccess(json))
-                dispatch(Actions.switchAwaitingStatus);
-            })
-            .catch(err => {
-                console.error(err.message)
-            })
+        .then(res => {
+            if (res.ok)
+            return res.json()
+        })
+        .then(json => {
+            dispatch(Actions.getJobSuccess(json))
+        })
+        .catch(err => {
+            console.error(err.message)
+        })
     },
     getJobSuccess: (payload) => {
         return {
@@ -107,12 +111,6 @@ const Actions = {
             type: ActionTypes.SWITCHSEARCHMODE
         }
     },
-    switchAwaitingStatus: () => {
-        return {
-            type: ActionTypes.SWITCHWAIT
-        }
-    }
-
 }
 
 export default Actions

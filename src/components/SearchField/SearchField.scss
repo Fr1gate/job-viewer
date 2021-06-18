@@ -60,6 +60,12 @@
     }
 }
 
+@media (max-width: 799px) {
+    .search {
+        margin-bottom: 0;
+    }
+}
+
 @media (min-width: 1920px) {
     .search {
         border-radius: vw(8);
